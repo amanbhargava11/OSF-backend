@@ -34,6 +34,16 @@ app.use(
 );
 
 app.use(express.json());
+/* ======================
+   HEALTH CHECK
+====================== */
+app.get("/", (req, res) => {
+  res.json({
+    status: "OK",
+    message: "OSF Backend is running 🚀",
+    time: new Date().toISOString(),
+  });
+});
 
 /* ======================
    ROUTES
